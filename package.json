@@ -6,7 +6,7 @@
     "compile": "tsc -b tsconfig.build.json",
     "start": "cd ./server && npm start",
     "start:server": "cd ./server && npm run start:watch",
-    "start:client": "cd ./client && npm run start",
+    "start:client": "cd ./client && npm run dev",
     "dev": "concurrently --prefix \"{name}\" --names \"server,client\" -c \"bgMagenta.bold,bgBlue.bold\" \"npm run start:server\" \"npm run start:client\"",
     "studio": "cd ./server && npm run studio",
     "test": "echo \"Error: no test specified\" && exit 1"
