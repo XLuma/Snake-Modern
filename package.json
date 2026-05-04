@@ -5,6 +5,10 @@
   "scripts": {
     "compile": "tsc -b tsconfig.build.json",
     "start": "cd ./server && npm start",
+    "start:server": "cd ./server && npm run start:watch",
+    "start:client": "cd ./client && npm run start",
+    "dev": "concurrently --prefix \"{name}\" --names \"server,client\" -c \"bgMagenta.bold,bgBlue.bold\" \"npm run start:server\" \"npm run start:client\"",
+    "studio": "cd ./server && npm run studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -21,6 +25,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "concurrently": "^9.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }
