@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "compile": "tsc -b tsconfig.build.json",
+    "start": "cd ./server && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -17,7 +19,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }
 }

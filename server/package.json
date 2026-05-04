@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "exports": "./src/server.js",
   "scripts": {
+    "compile": "npx tsc --build ./tsconfig.json",
+    "start": "node --expose-gc --max-old-space-size=16384 ./lib/server.js",
+    "studio": "npx prisma studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
     "eslint": "^10.3.0",
     "prisma": "^7.8.0"
@@ -17,7 +22,9 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "body-parser": "^2.2.2",
     "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "typescript": "^6.0.3"
   }
 }
