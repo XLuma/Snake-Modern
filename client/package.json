@@ -2,7 +2,6 @@
 	"name": "@snake-modern/client",
 	"private": true,
 	"version": "0.0.1",
-	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -31,6 +30,7 @@
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
+		"rollup": "^4.60.3",
 		"svelte": "^5.55.2",
 		"svelte-check": "^4.4.6",
 		"svelte-pixi": "^8.0.1",
