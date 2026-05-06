@@ -13,6 +13,7 @@ Install nvm on your machine.
 
 
 # TODO
-- Easy setup for a database... docker ?
-- Sample code to verify communication between front and back
-- Reimplement the whole game kekw
+- Add prettier
+- Validate prisma functionality
+- Finish french localization
+- Reimplement the whole game
