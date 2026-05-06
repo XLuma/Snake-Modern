@@ -1,5 +1,25 @@
 @import 'tailwindcss';
 
 body {
-    background: url(./../lib/assets/background.png) top left repeat-x #319202;
+  background: url($lib/assets/background.png) top left repeat-x #319202;
+}
+
+@utility max-width-900 {
+  max-width: min(900px, 100vw);
+}
+
+@utility img-rendering-pixelated {
+  image-rendering: pixelated;
+}
+
+@utility nav-main-borders {
+  background: #fdfefb;
+  box-sizing: border-box;
+  border: 8px solid transparent;
+  border-image-repeat: repeat;
+  border-image-slice: 4;
+  border-image-source: url($lib/assets/content_tileset.png);
+  border-image-width: 8px;
+  border-radius: 16px;
+  image-rendering: pixelated;
 }
