@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+body {
+    background: url(./../lib/assets/background.png) top left repeat-x #319202;
+}

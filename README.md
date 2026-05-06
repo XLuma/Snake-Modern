@@ -17,3 +17,7 @@ Install nvm on your machine.
 - Validate prisma functionality
 - Finish french localization
 - Reimplement the whole game
+
+# Credits
+- Main developer: XLuma
+- Styles borrowed from snake.angelisium.fr (with permission !), by Angelisium

@@ -102,5 +102,12 @@
   "collection.lottery.small_title": "Tombola",
   "collection.lottery.big_title": "La tombola de Loterine",
   "collection.bazar.small_title": "Bazar",
-  "collection.bazar.big_title": "Le bazar de Mephistouf"
+  "collection.bazar.big_title": "Le bazar de Mephistouf",
+  "nav.arena": "Arene",
+  "nav.quests": "Quetes",
+  "nav.encyclopedia": "Encyclopefruit",
+  "nav.cards": "Cartes",
+  "nav.tournament": "Tournoi",
+  "nav.ranking": "Classement",
+  "nav.forum": "Forum"
 }
