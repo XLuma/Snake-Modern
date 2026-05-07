@@ -1,7 +1,14 @@
 # Snake-Modern
+
 Reimplementation of Snake Muxxu by Motion-Twin.
 
+## Technologies
+
+Backend: Typescript, Prisma, Express
+Client: Svelte, TailwindCSS, Paraglide, PixiJS
+
 # Setup
+
 Install nvm on your machine.
 
 1. Clone
@@ -11,13 +18,37 @@ Install nvm on your machine.
 5. `npm install`
 6. `npm run dev`
 
-
 # TODO
-- Add prettier
+
 - Validate prisma functionality
-- Finish french localization
-- Reimplement the whole game
+- Add instructions to run the db with docker
+
+## Client
+
+### Website
+
+- Add localization for other languages
+- Implement the following pages: Cards, Encyclopefruit for testing
+
+### Fruits
+
+- Create the necessary classes (registry, base class) and document them
+- Create a few entries to test functionality
+
+### Cards
+
+- Create base classees to define cards (registry, base class) and document them
+- Create a few entries to test functionality
+
+### Game
+
+- TBD (Will be done later on)
+
+## Backend
+
+- TBD
 
 # Credits
+
 - Main developer: XLuma
 - Styles borrowed from snake.angelisium.fr (with permission !), by Angelisium
