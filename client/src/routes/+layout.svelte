@@ -5,7 +5,24 @@
   import favicon from '$lib/assets/favicon.svg';
   import header from '$lib/assets/header_cover.png';
   let { children } = $props();
+
+  let nav_links = [
+    { href: '/arena', label: m['nav.arena'](), className: 'arena selected' },
+    { href: '/quests', label: m['nav.quests'](), className: 'quests' },
+    { href: '/encyclopedia', label: m['nav.encyclopedia'](), className: 'encyclopedia' },
+    { href: '/cards', label: m['nav.cards'](), className: 'cards' },
+    { href: '/tournament', label: m['nav.tournament'](), className: 'tournament' },
+    { href: '/ranking', label: m['nav.ranking'](), className: 'ranking' },
+    { href: '/forum', label: m['nav.forum'](), className: 'forum' }
+  ];
 </script>
+
+{#snippet nav_child(nav_link)}
+  <a
+    class="{nav_link.className} mt-1 h-4 pt-0.5 pr-3 pb-0 pl-5.5 tracking-[-0.5px] text-transparent uppercase no-underline img-rendering-pixelated"
+    href={nav_link.href}>{nav_link.label}</a
+  >
+{/snippet}
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <h1
@@ -17,13 +34,9 @@
 <nav
   class="mx-auto my-0 nav-main-borders box-border flex h-9.5 max-width-900 justify-between overflow-auto overflow-hidden px-3.5 py-0"
 >
-  <a href="/arena">{m['nav.arena']()}</a>
-  <a href="/quests">{m['nav.quests']()}</a>
-  <a href="/encyclopedia">{m['nav.encyclopedia']()}</a>
-  <a href="/cards">{m['nav.cards']()}</a>
-  <a href="/tournament">{m['nav.tournament']()}</a>
-  <a href="/ranking">{m['nav.ranking']()}</a>
-  <a href="/forum">{m['nav.forum']()}</a>
+  {#each nav_links as nav_link}
+    {@render nav_child(nav_link)}
+  {/each}
 </nav>
 <main class="mx-auto mt-2.25 mb-0 nav-main-borders block max-w-[min(900px,90vw)]">
   {@render children()}

@@ -4,6 +4,45 @@ body {
   background: url($lib/assets/background.png) top left repeat-x #319202;
 }
 
+nav > a {
+  background: -14px 0 / 476px 272px no-repeat local;
+}
+
+:where(html[lang='fr']) nav > a {
+  background-image: url($lib/assets/menu_fr_tileset.png);
+}
+
+nav > a.arena {
+  background-position-y: -16px;
+}
+nav > a.quests {
+  background-position-y: -48px;
+}
+nav > a.encyclopedia {
+  background-position-y: -80px;
+}
+nav > a.tournament {
+  background-position-y: -112px;
+}
+nav > a.ranking {
+  background-position-y: -144px;
+}
+nav > a.cards {
+  background-position-y: -176px;
+}
+nav > a.forum {
+  background-position-y: -208px;
+}
+nav > a.register {
+  background-position-y: -240px;
+}
+nav > a.selected {
+  background-position-x: -168px;
+}
+nav > a:hover {
+  background-position-x: -322px;
+}
+
 @utility max-width-900 {
   max-width: min(900px, 100vw);
 }
