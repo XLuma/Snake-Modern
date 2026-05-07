@@ -12,7 +12,7 @@
     { href: '/encyclopedia', label: m['nav.encyclopedia'](), className: 'encyclopedia' },
     { href: '/cards', label: m['nav.cards'](), className: 'cards' },
     { href: '/tournament', label: m['nav.tournament'](), className: 'tournament' },
-    { href: '/ranking', label: m['nav.ranking'](), className: 'ranking' },
+    { href: '/rankings', label: m['nav.ranking'](), className: 'ranking' },
     { href: '/forum', label: m['nav.forum'](), className: 'forum' }
   ];
 </script>
