@@ -1,0 +1,22 @@
+export enum FruitTag {
+  Sugar,
+  Red,
+  Leaf,
+  Small,
+  Nut,
+  Flower,
+  Agrume,
+  Green,
+  Liane,
+  Alien,
+  Berries,
+  Long,
+  Courge,
+  Poire,
+  Blue,
+  Apple,
+  Shit,
+  Orange,
+  Yellow,
+  Pink
+}
