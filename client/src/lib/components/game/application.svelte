@@ -5,6 +5,7 @@
   import * as PIXI from 'pixi.js';
   import BrowserBMP from '$lib/assets/browser.png';
   import BrowserFront from '$lib/assets/browser_front.png';
+  import FruitEntryBg from '$lib/assets/fruit_entry_bg.png';
 
   const initPromise = PIXI.Assets.init({
     skipDetections: true,
@@ -17,8 +18,9 @@
 
 {#await initPromise then}
   <Application width={800} height={420} autoDensity={true}>
-    <AssetsLoader assets={[BrowserBMP, BrowserFront]}>
+    <AssetsLoader assets={[BrowserBMP, BrowserFront, FruitEntryBg]}>
       <Sprite label="browser" texture={PIXI.Texture.from(BrowserBMP)} x={0} y={0} scale={2} />
+      <!--cards here-->
       <Sprite
         label="browserFront"
         texture={PIXI.Texture.from(BrowserFront)}
@@ -26,6 +28,8 @@
         y={0}
         scale={2}
       />
+      <!--text here-->
+      <!--mojo + hand here-->
     </AssetsLoader>
   </Application>
 {/await}

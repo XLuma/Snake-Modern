@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "fruit.names.unknown": "fruit inconnu",
   "fruit.names.wolfberry": "pokaran",
   "fruit.names.shampapple": "pomme shampooing"
 }
