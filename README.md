@@ -52,3 +52,4 @@ Install nvm on your machine.
 
 - Main developer: XLuma
 - Styles borrowed from snake.angelisium.fr (with permission !), by Angelisium
+- Fruits and Cards assets belong to Motion Twin and are licensed under the CC-BY-SA-4.0 license.
