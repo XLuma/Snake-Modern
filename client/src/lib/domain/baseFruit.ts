@@ -12,5 +12,5 @@ export type BaseFruit = {
   freq: number; //how often it can spawn ? or how many ?
   tags: FruitTag[]; //assorted tags
   key: string; //unique key identifier
-  spritePath?: string; //optional path to sprites while I figure this out
+  spritePath: string; //path to the fruit sprite
 };
