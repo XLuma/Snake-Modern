@@ -60,11 +60,19 @@
             style={{ fontSize: 16, fontFamily: 'nokiafc22', fill: 'white' }}
           />
           <Text
+            label="fruit_no"
+            text="no.6"
+            x={382}
+            y={28}
+            anchor={{ x: 1, y: 0.5 }}
+            style={{ align: 'right', fontSize: 16, fontFamily: '04b03', fill: '#319202' }}
+          />
+          <Text
             text="100"
             label="fruit_stock_eaten"
             x={413}
             y={28}
-            anchor={0.5}
+            anchor={{ x: 0.5, y: 0.5 }}
             style={{
               align: 'center',
               fontSize: 16,
@@ -87,7 +95,7 @@
             x={18}
             y={31}
           />
-          <Container x={80} y={18} label="fruit_data_label_container">
+          <Container x={80} y={20} label="fruit_data_label_container">
             <Text
               text="score :"
               label="fruit_score"
@@ -118,9 +126,39 @@
             />
             <Text
               text="rouge,feuille,sucre,pomme"
-              y={59}
+              y={58}
               label="fruit_tags"
               style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#319202' }}
+            />
+          </Container>
+          <Container label="fruit_stats_container" x={216} y={20}>
+            <Text
+              text="24"
+              label="fruit_score_value"
+              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
+            />
+            <Text
+              text="20 mg"
+              y={14}
+              label="fruit_vitamin_value"
+              style={{
+                align: 'center',
+                fontSize: 16,
+                fontFamily: '04b03',
+                fill: 'white'
+              }}
+            />
+            <Text
+              text="10 calories"
+              y={28}
+              label="fruit_nutrition_value"
+              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
+            />
+            <Text
+              text="10 sec"
+              y={42}
+              label="fruit_conservation_value"
+              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
             />
           </Container>
         </Container>
