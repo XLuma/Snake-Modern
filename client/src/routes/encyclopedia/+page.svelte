@@ -7,6 +7,13 @@
   import NokiaCFFont from '$lib/fonts/nokiafc22.ttf';
   import _04b03Font from '$lib/fonts/04b03.ttf';
   import fruitBundle from '$lib/data/fruits/assetBundle';
+  import FruitName from '$lib/components/fruits/fruit_name.svelte';
+  import FruitNumber from '$lib/components/fruits/fruit_number.svelte';
+  import FruitStock from '$lib/components/fruits/fruit_stock.svelte';
+  import FruitSprite from '$lib/components/fruits/fruit_sprite.svelte';
+  import FruitStats from '$lib/components/fruits/fruit_stats.svelte';
+  import { m } from '$lib/paraglide/messages';
+  import { FruitTag } from '$lib/types/fruitTags';
 
   const initPromise = PIXI.Assets.init({
     skipDetections: true,
@@ -52,115 +59,21 @@
       <Container label="fruit_entry_container">
         <Container x={0} y={0}>
           <FruitEntry />
-          <Text
-            text="pomme shampoing"
-            label="fruit_name"
-            x={4}
-            y={2}
-            style={{ fontSize: 16, fontFamily: 'nokiafc22', fill: 'white' }}
-          />
-          <Text
-            label="fruit_no"
-            text="no.6"
-            x={382}
-            y={28}
-            anchor={{ x: 1, y: 0.5 }}
-            style={{ align: 'right', fontSize: 16, fontFamily: '04b03', fill: '#319202' }}
-          />
-          <Text
-            text="100"
-            label="fruit_stock_eaten"
-            x={413}
-            y={28}
-            anchor={{ x: 0.5, y: 0.5 }}
-            style={{
-              align: 'center',
-              fontSize: 16,
-              fontFamily: 'nokiafc22',
-              fill: 'white'
+          <FruitName key="shampapple" />
+          <FruitNumber rank={5} />
+          <FruitStock stock={20} />
+          <FruitSprite key="shampapple" seen={true} />
+          <FruitStats
+            lvl={1}
+            fruit={{
+              rank: 5,
+              score: 8,
+              vitamin: 20,
+              nutrition: 10,
+              conservation: 10
             }}
+            tags={[FruitTag.Red, FruitTag.Leaf, FruitTag.Sugar, FruitTag.Apple]}
           />
-          <Sprite
-            label="fruit_sprite_shadow"
-            texture={PIXI.Texture.from('shampapple')}
-            scale={2}
-            x={22}
-            y={35}
-            filters={[colorMatrixFilter]}
-          />
-          <Sprite
-            label="fruit_sprite"
-            texture={PIXI.Texture.from('shampapple')}
-            scale={2}
-            x={18}
-            y={31}
-          />
-          <Container x={80} y={20} label="fruit_data_label_container">
-            <Text
-              text="score :"
-              label="fruit_score"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-            />
-            <Text
-              text="vitamine :"
-              y={14}
-              label="fruit_vitamin"
-              style={{
-                align: 'center',
-                fontSize: 16,
-                fontFamily: '04b03',
-                fill: '#c7ff77'
-              }}
-            />
-            <Text
-              text="nutrition :"
-              y={28}
-              label="fruit_nutrition"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-            />
-            <Text
-              text="conservation :"
-              y={42}
-              label="fruit_conservation"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-            />
-            <Text
-              text="rouge,feuille,sucre,pomme"
-              y={58}
-              label="fruit_tags"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#319202' }}
-            />
-          </Container>
-          <Container label="fruit_stats_container" x={216} y={20}>
-            <Text
-              text="24"
-              label="fruit_score_value"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-            />
-            <Text
-              text="20 mg"
-              y={14}
-              label="fruit_vitamin_value"
-              style={{
-                align: 'center',
-                fontSize: 16,
-                fontFamily: '04b03',
-                fill: 'white'
-              }}
-            />
-            <Text
-              text="10 calories"
-              y={28}
-              label="fruit_nutrition_value"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-            />
-            <Text
-              text="10 sec"
-              y={42}
-              label="fruit_conservation_value"
-              style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-            />
-          </Container>
         </Container>
       </Container>
       <Container x={442}>
