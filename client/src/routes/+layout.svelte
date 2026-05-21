@@ -4,6 +4,8 @@
   import './layout.css';
   import favicon from '$lib/assets/favicon.svg';
   import header from '$lib/assets/header_cover.png';
+  import { FruitRegistry } from '$lib/domain/fruitRegistry';
+  import { Shampapple, Wolfberry } from '$lib/data/fruits';
   let { children } = $props();
 
   let nav_links = [
@@ -15,6 +17,9 @@
     { href: '/rankings', label: m['nav.ranking'](), className: 'ranking' },
     { href: '/forum', label: m['nav.forum'](), className: 'forum' }
   ];
+  let fruitRegistry: FruitRegistry = FruitRegistry.getInstance();
+  fruitRegistry.registerFruit(Shampapple);
+  fruitRegistry.registerFruit(Wolfberry);
 </script>
 
 {#snippet nav_child(nav_link)}

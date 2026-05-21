@@ -11,11 +11,12 @@
 
   interface Props {
     fruit: FruitEntity;
+    pos_y: number;
   }
-  let { fruit }: Props = $props();
+  let { fruit, pos_y }: Props = $props();
 </script>
 
-<Container>
+<Container y={pos_y}>
   <FruitEntry />
   {#if fruit.level > 1}
     <FruitName key={fruit.key} />

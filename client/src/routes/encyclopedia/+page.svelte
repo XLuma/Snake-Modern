@@ -10,6 +10,7 @@
   import FruitCard from '$lib/components/fruits/fruit_card.svelte';
   import { FruitEntity } from '$lib/domain/fruitEntity';
   import { Shampapple } from '$lib/data/fruits';
+  import { FruitRegistry } from '$lib/domain/fruitRegistry';
 
   const initPromise = PIXI.Assets.init({
     skipDetections: true,
@@ -22,6 +23,7 @@
   //move this in the layout or somewhere more global
   PIXI.Assets.addBundle('fruitBundle', fruitBundle);
   PIXI.Assets.loadBundle('fruitBundle');
+  const fruitRegistry = FruitRegistry.getInstance();
 </script>
 
 <div class="relative mx-auto my-0 block h-106 w-220 bg-red-500">
@@ -29,7 +31,8 @@
     <Application width={880} height={424} autoDensity={true} backgroundColor={0xffffff}>
       <AssetsLoader assets={[FruitEntryBg, NokiaCFFont, _04b03Font]} />
       <Container label="fruit_entry_container">
-        <FruitCard fruit={new FruitEntity(Shampapple, 99)} />
+        <FruitCard fruit={fruitRegistry.getFruit('wolfberry')} />
+        <FruitCard pos_y={104} fruit={fruitRegistry.getFruit('shampapple')} />
       </Container>
       <Container x={442}>
         <Container x={0} y={0}>
