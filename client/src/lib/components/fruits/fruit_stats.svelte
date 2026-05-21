@@ -3,29 +3,16 @@
   import type { FruitTag } from '$lib/types/fruitTags';
   import * as PIXI from 'pixi.js';
   import { Text, Container } from 'svelte-pixi';
+  import { FruitEntity } from '$lib/domain/fruitEntity';
 
   interface Props {
     lvl: number;
-    fruit: {
-      rank: number;
-      score: number;
-      vitamin: number;
-      nutrition: number;
-      conservation: number;
-    };
-    tags: FruitTag[];
+    fruit: FruitEntity;
   }
-  let { lvl, fruit, tags }: Props = $props();
+  let { lvl, fruit }: Props = $props();
 
   function buildTagsString() {
-    return tags.map((tag) => m[`fruit.tags.${tag}`]()).join(',');
-  }
-
-  function getFruitScore() {
-    let n = Math.pow(fruit.rank + 4, 1.5);
-    let lim = 10;
-    let current = Math.round(n / lim) * lim;
-    return current * fruit.score * 0.1;
+    return fruit.tags.map((tag) => m[`fruit.tags.${tag}`]()).join(',');
   }
 </script>
 
@@ -72,12 +59,12 @@
 <Container label="fruit_stats_container" x={216} y={20}>
   {#if lvl >= 3}
     <Text
-      text={`${getFruitScore()}`}
+      text={`${fruit.getAverageScore()}`}
       label="fruit_score_value"
       style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
     />
     <Text
-      text={`${fruit.vitamin} ${m['units.weight']()}`}
+      text={`${fruit.vitamines} ${m['units.weight']()}`}
       y={14}
       label="fruit_vitamin_value"
       style={{
@@ -88,7 +75,7 @@
       }}
     />
     <Text
-      text={`${fruit.nutrition} ${m['units.calories']()}`}
+      text={`${fruit.calories} ${m['units.calories']()}`}
       y={28}
       label="fruit_nutrition_value"
       style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}

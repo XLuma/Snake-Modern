@@ -59,4 +59,11 @@ export class FruitEntity implements BaseFruitInterface {
   get coef(): number {
     return this.stock / this.expLimit[this.expLimit.length - 1];
   }
+
+  getAverageScore(): number {
+    let n = Math.pow(this.rank + 4, 1.5);
+    let lim = 10;
+    let current = Math.round(n / lim) * lim;
+    return current * this.score * 0.1;
+  }
 }
