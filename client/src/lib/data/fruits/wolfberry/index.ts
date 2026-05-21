@@ -1,5 +1,6 @@
 import type { BaseFruitInterface } from '$lib/domain/baseFruit';
 import { FruitTag } from '$lib/types/fruitTags';
+import WolfberrySprite from '$lib/assets/fruits/wolfberry.png';
 
 export const Wolfberry: BaseFruitInterface = {
   score: 10,
@@ -9,5 +10,6 @@ export const Wolfberry: BaseFruitInterface = {
   freq: 1,
   rank: 0,
   tags: [FruitTag.Leaf, FruitTag.Sugar, FruitTag.Small, FruitTag.Courge, FruitTag.Orange],
-  key: 'wolfberry'
+  key: 'wolfberry',
+  spritePath: WolfberrySprite
 };
