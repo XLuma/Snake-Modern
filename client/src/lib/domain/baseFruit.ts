@@ -3,7 +3,7 @@ import type { FruitTag } from '$lib/types/fruitTags';
 /**
  * @description This type implements the base data structure for a Fruit.
  */
-export type BaseFruit = {
+export interface BaseFruitInterface {
   score: number; //score calc
   calories: number; //snake grows 1cm per calorie
   vitamines: number; //frutibar fills up x times 0.05%
@@ -13,4 +13,4 @@ export type BaseFruit = {
   tags: FruitTag[]; //assorted tags
   key: string; //unique key identifier
   spritePath: string; //path to the fruit sprite
-};
+}

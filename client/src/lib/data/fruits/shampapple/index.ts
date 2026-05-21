@@ -1,8 +1,8 @@
-import type { BaseFruit } from '$lib/domain/baseFruit';
+import type { BaseFruitInterface } from '$lib/domain/baseFruit';
 import { FruitTag } from '$lib/types/fruitTags';
 import ShampappleSprite from '$lib/assets/fruits/shampapple.png';
 
-export const Shampapple: BaseFruit = {
+export const Shampapple: BaseFruitInterface = {
   score: 8,
   calories: 10,
   vitamines: 20,

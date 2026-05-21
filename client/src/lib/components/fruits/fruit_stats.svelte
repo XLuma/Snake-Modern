@@ -30,35 +30,37 @@
 </script>
 
 <Container x={80} y={20} label="fruit_data_label_container">
-  <Text
-    text={`${m['fruits.props.score']()} :`}
-    label="fruit_score"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-  />
-  <Text
-    text={`${m['fruits.props.vitamin']()} :`}
-    y={14}
-    label="fruit_vitamin"
-    style={{
-      align: 'center',
-      fontSize: 16,
-      fontFamily: '04b03',
-      fill: '#c7ff77'
-    }}
-  />
-  <Text
-    text={`${m['fruits.props.nutrition']()} :`}
-    y={28}
-    label="fruit_nutrition"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-  />
-  <Text
-    text={`${m['fruits.props.conservation']()} :`}
-    y={42}
-    label="fruit_conservation"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
-  />
-  {#if lvl == 5}
+  {#if lvl >= 3}
+    <Text
+      text={`${m['fruits.props.score']()} :`}
+      label="fruit_score"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
+    />
+    <Text
+      text={`${m['fruits.props.vitamin']()} :`}
+      y={14}
+      label="fruit_vitamin"
+      style={{
+        align: 'center',
+        fontSize: 16,
+        fontFamily: '04b03',
+        fill: '#c7ff77'
+      }}
+    />
+    <Text
+      text={`${m['fruits.props.nutrition']()} :`}
+      y={28}
+      label="fruit_nutrition"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
+    />
+    <Text
+      text={`${m['fruits.props.conservation']()} :`}
+      y={42}
+      label="fruit_conservation"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: '#c7ff77' }}
+    />
+  {/if}
+  {#if lvl >= 4}
     <Text
       text={buildTagsString()}
       y={58}
@@ -68,32 +70,34 @@
   {/if}
 </Container>
 <Container label="fruit_stats_container" x={216} y={20}>
-  <Text
-    text={`${getFruitScore()}`}
-    label="fruit_score_value"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-  />
-  <Text
-    text={`${fruit.vitamin} ${m['units.weight']()}`}
-    y={14}
-    label="fruit_vitamin_value"
-    style={{
-      align: 'center',
-      fontSize: 16,
-      fontFamily: '04b03',
-      fill: 'white'
-    }}
-  />
-  <Text
-    text={`${fruit.nutrition} ${m['units.calories']()}`}
-    y={28}
-    label="fruit_nutrition_value"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-  />
-  <Text
-    text={`${fruit.conservation} ${m['units.time']()}`}
-    y={42}
-    label="fruit_conservation_value"
-    style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
-  />
+  {#if lvl >= 3}
+    <Text
+      text={`${getFruitScore()}`}
+      label="fruit_score_value"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
+    />
+    <Text
+      text={`${fruit.vitamin} ${m['units.weight']()}`}
+      y={14}
+      label="fruit_vitamin_value"
+      style={{
+        align: 'center',
+        fontSize: 16,
+        fontFamily: '04b03',
+        fill: 'white'
+      }}
+    />
+    <Text
+      text={`${fruit.nutrition} ${m['units.calories']()}`}
+      y={28}
+      label="fruit_nutrition_value"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
+    />
+    <Text
+      text={`${fruit.conservation} ${m['units.time']()}`}
+      y={42}
+      label="fruit_conservation_value"
+      style={{ align: 'center', fontSize: 16, fontFamily: '04b03', fill: 'white' }}
+    />
+  {/if}
 </Container>

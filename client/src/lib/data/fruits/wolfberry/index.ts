@@ -1,7 +1,7 @@
-import type { BaseFruit } from '$lib/domain/baseFruit';
+import type { BaseFruitInterface } from '$lib/domain/baseFruit';
 import { FruitTag } from '$lib/types/fruitTags';
 
-export const Wolfberry: BaseFruit = {
+export const Wolfberry: BaseFruitInterface = {
   score: 10,
   calories: 10,
   vitamines: 10,
