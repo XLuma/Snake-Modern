@@ -6,10 +6,7 @@
   import FruitEntryBg from '$lib/assets/fruit_entry_bg.png';
   import NokiaCFFont from '$lib/fonts/nokiafc22.ttf';
   import _04b03Font from '$lib/fonts/04b03.ttf';
-  import fruitBundle from '$lib/data/fruits/assetBundle';
   import FruitCard from '$lib/components/fruits/fruit_card.svelte';
-  import { FruitEntity } from '$lib/domain/fruitEntity';
-  import { Shampapple } from '$lib/data/fruits';
   import { FruitRegistry } from '$lib/domain/fruitRegistry';
 
   const initPromise = PIXI.Assets.init({
@@ -19,10 +16,6 @@
     }
   });
   PIXI.TextureStyle.defaultOptions.scaleMode = 'nearest';
-
-  //move this in the layout or somewhere more global
-  PIXI.Assets.addBundle('fruitBundle', fruitBundle);
-  PIXI.Assets.loadBundle('fruitBundle');
   const fruitRegistry = FruitRegistry.getInstance();
 </script>
 

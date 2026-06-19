@@ -20,7 +20,17 @@ export class FruitRegistry {
     }
   }
 
+  public registerFruits(fruits: Iterable<BaseFruitInterface>): void {
+    for (const fruit of fruits) {
+      this.registerFruit(fruit);
+    }
+  }
+
   public getFruit(key: string): FruitEntity | undefined {
     return this.fruits.get(key);
+  }
+
+  public getFruitsInRankRange(minRank: number, maxRank: number): FruitEntity[] {
+    return Array.from(this.fruits.values()).filter(fruit => fruit.rank >= minRank && fruit.rank <= maxRank);
   }
 }

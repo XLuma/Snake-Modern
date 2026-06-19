@@ -27,15 +27,5 @@
   <FruitNumber rank={fruit.rank} />
   <FruitStock stock={fruit.stock} />
   <FruitSprite key={fruit.key} seen={fruit.level > 0} />
-  <FruitStats
-    lvl={fruit.level}
-    fruit={{
-      rank: fruit.rank,
-      score: fruit.score,
-      vitamin: fruit.vitamines,
-      nutrition: fruit.calories,
-      conservation: fruit.sta
-    }}
-    tags={fruit.tags}
-  />
+  <FruitStats lvl={fruit.level} {fruit} />
 </Container>

@@ -1,11 +1,14 @@
 <script lang="ts">
   import { m } from '$lib/paraglide/messages';
-  import { getLocale, setLocale } from '$lib/paraglide/runtime.js';
   import './layout.css';
   import favicon from '$lib/assets/favicon.svg';
   import header from '$lib/assets/header_cover.png';
   import { FruitRegistry } from '$lib/domain/fruitRegistry';
-  import { Shampapple, Wolfberry } from '$lib/data/fruits';
+  import { fruits } from '$lib/data/fruits';
+  import * as PIXI from 'pixi.js';
+  import { devicePixelRatio } from 'svelte/reactivity/window';
+  import fruitBundle from '$lib/data/fruits/assetBundle';
+
   let { children } = $props();
 
   let nav_links = [
@@ -17,9 +20,21 @@
     { href: '/rankings', label: m['nav.ranking'](), className: 'ranking' },
     { href: '/forum', label: m['nav.forum'](), className: 'forum' }
   ];
+
   let fruitRegistry: FruitRegistry = FruitRegistry.getInstance();
-  fruitRegistry.registerFruit(Shampapple);
-  fruitRegistry.registerFruit(Wolfberry);
+  fruitRegistry.registerFruits(fruits);
+
+  const initPromise = PIXI.Assets.init({
+    skipDetections: true,
+    texturePreference: {
+      resolution: devicePixelRatio.current
+    },
+    
+  });
+  PIXI.TextureStyle.defaultOptions.scaleMode = 'nearest';
+
+  PIXI.Assets.addBundle('fruitBundle', fruitBundle);
+  PIXI.Assets.loadBundle('fruitBundle');
 </script>
 
 {#snippet nav_child(nav_link)}

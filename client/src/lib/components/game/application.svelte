@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Application, Text, Sprite, AssetsLoader } from 'svelte-pixi';
-  import * as FILTERS from 'pixi-filters';
   import { devicePixelRatio } from 'svelte/reactivity/window';
   import * as PIXI from 'pixi.js';
   import BrowserBMP from '$lib/assets/browser.png';
